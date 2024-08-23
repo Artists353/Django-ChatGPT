@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{%block title%} {{ title }} {%endblock%}
+
+{% block content %}
+  <div class="features">
+    <h1>{{ title }}</h1>
+    <p>Здесь просто главная страница</p>
+    <button class="btn btn-warning">Про нас</button>
+    {% for el in achievement%}
+          {% if el == 'ChatGPT' %}
+              {% filter upper %}
+                  <p>{{el}}</p>
+              {% endfilter %}
+          {% endif %}
+    {% endfor %}
+    {%filter upper %}
+        <p>{{ disclaimer }}</p>
+    {% endfilter %}
+  </div>
+{%endblock%}
+
